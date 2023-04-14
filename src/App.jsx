@@ -16,6 +16,9 @@ function App() {
       .then(r => {
         setSiteData(r)
       })
+      .catch((error) => {
+        console.log('Error during fetch: ' + error.message);
+    });
   }, [])
   return (
     <BrowserRouter>
