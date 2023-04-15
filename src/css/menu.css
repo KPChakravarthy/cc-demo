@@ -53,3 +53,10 @@ h1.category {
   font-size: 1.1em;
   font-style: italic;
 }
+
+@media only screen and (min-width: 280px) and (max-width: 599px) {
+	.menu {
+		width: 100%;
+    margin-top: 60px !important;
+	}
+}

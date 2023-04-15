@@ -1355,3 +1355,37 @@ h1.large-header {
     font-weight: bold;
     margin-bottom: 20px;
 }
+
+.responsive-menu {
+    display: none;
+}
+
+.navbar-light {
+    box-shadow: 0px 1px 20px 2px #d3d3d3;
+}
+
+.navbar-light .navbar-toggler {
+    border: transparent;
+}
+
+@media only screen and (min-width: 280px) and (max-width: 767px) {
+	.space-header {
+		margin-top: 20px;
+	}
+    .responsive-menu {
+        display: block;
+    }
+    .responsive-menu.menu-out {
+        transition: all ease 300ms;
+        transform: translate(100%, 0);
+    }
+    .responsive-menu.menu-in {
+        transition: all ease 300ms;
+        transform: translate(0, 0);
+    }
+    .responsive-menu > .responsive-close {
+        position: absolute;
+        right: 25px;
+        top: 25px;
+    }
+}

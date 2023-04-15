@@ -7,7 +7,7 @@ const About = (props) => {
         <div>
           <h1 className="text-center large-header">{props.data?.aboutTitle}</h1>
           <div className="text-center mb-4">
-            <img src={props.data?.banner} alt="" />
+            <img className="about-banner" src={props.data?.banner} alt="" />
           </div>
           <div className="text-center">
             <div className="inner-column">
