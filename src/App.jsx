@@ -1,6 +1,6 @@
 import "./App.css";
 import React from 'react';
-import { BrowserRouter, HashRouter, Routes, Route } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 
 import Home from "./components/Home";
 import About from "./components/About";
@@ -20,19 +20,38 @@ function App() {
         console.log('Error during fetch: ' + error.message);
     });
   }, [])
+
+  const router = createHashRouter([
+    {
+      path: "/",
+      element: <Layout data={siteData} />,
+      children: [
+        {
+          path: "",
+          element: <Home data={siteData.home} />,
+        },
+        {
+          path: "about",
+          element: <About data={siteData.about} />,
+        },
+        {
+          path: "menu",
+          element: <Menu data={siteData.menu} />,
+        },
+        {
+          path: "gallery",
+          element: <Gallery data={siteData.gallery} />,
+        },
+        {
+          path: "contact",
+          element: <Contact data={siteData.contact} />,
+        },
+      ],
+    },
+  ]);
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout data={siteData} />}>
-          <Route index element={<Home data={siteData.home} />} />
-          <Route path="about" element={<About data={siteData.about} />} />
-          <Route path="menu" element={<Menu data={siteData.menu} />} />
-          <Route path="gallery" element={<Gallery data={siteData.gallery} />} />
-          <Route path="contact" element={<Contact data={siteData.contact} />} />
-          {/* <Route path="*" element={<NoPage />} /> */}
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <RouterProvider router={router} />
   );
 }
 

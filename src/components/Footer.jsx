@@ -33,10 +33,10 @@ const Footer = (props) => {
               headquarters address
             </p>
             <p className="lead">
-              <a href="tel:">+01 2000 800 9999</a>
+              <span >+01 2000 800 9999</span>
             </p>
             <p>
-              <a href="#"> help@cafecaffeine.in</a>
+              <span > help@cafecaffeine.in</span>
             </p>
           </div>
         </div>
